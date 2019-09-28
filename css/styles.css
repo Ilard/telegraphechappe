@@ -1,6 +1,6 @@
 @import "reset.css";
 @import "fonts.css";
-@import "position.css";
+@import "rotation.css";
 
 .main {
     height: 100vh;
@@ -8,7 +8,7 @@
     background-color: #ecf0f1;
 }
 
-.main .main-wraper {
+.main .main-wrapper {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -67,12 +67,12 @@
     background-color: #2980b9;
 }
 
-.main .telegraph .telegraph-wrapper .regulator .indicator1 {
+.main .telegraph .telegraph-wrapper .regulator .indicatorRight {
     bottom: 0;
     transform-origin: bottom;
 }
 
-.main .telegraph .telegraph-wrapper .regulator .indicator2 {
+.main .telegraph .telegraph-wrapper .regulator .indicatorLeft {
     top: 0;
     transform-origin: top;
 }

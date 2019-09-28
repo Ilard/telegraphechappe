@@ -1,0 +1,62 @@
+{
+    "1": {
+        "regulator": "0",
+        "indicatorRight": "2",
+        "indicatorLeft": "6"
+    },
+    "2": {
+        "regulator": "0",
+        "indicatorRight": "2",
+        "indicatorLeft": "7"
+    },
+    "3": {
+        "regulator": "0",
+        "indicatorRight": "9",
+        "indicatorLeft": "6"
+    },
+    "4": {
+        "regulator": "0",
+        "indicatorRight": "9",
+        "indicatorLeft": "7"
+    },
+    "5": {
+        "regulator": "0",
+        "indicatorRight": "2",
+        "indicatorLeft": "5"
+    },
+    "6": {
+        "regulator": "0",
+        "indicatorRight": "3",
+        "indicatorLeft": "2"
+    },
+    "7": {
+        "regulator": "0",
+        "indicatorRight": "4",
+        "indicatorLeft": "0"
+    },
+    "8": {
+        "regulator": "0",
+        "indicatorRight": "5",
+        "indicatorLeft": "0"
+    },
+    "9": {
+        "regulator": "0",
+        "indicatorRight": "6",
+        "indicatorLeft": "4"
+    },
+    "10": {
+        "regulator": "0",
+        "indicatorRight": "7",
+        "indicatorLeft": "3"
+    },
+    "11": {
+        "regulator": "0",
+        "indicatorRight": "8",
+        "indicatorLeft": "0"
+    },
+    "12": {
+        "regulator": "0",
+        "indicatorRight": "9",
+        "indicatorLeft": "0"
+    }
+}

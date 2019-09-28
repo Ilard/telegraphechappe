@@ -1,0 +1,72 @@
+.regulatorRotation0 {
+    transform: rotate(-90deg);
+}
+
+.regulatorRotation1 {
+    transform: rotate(-45deg);
+}
+
+.regulatorRotation2 {
+    transform: rotate(-135deg);
+}
+
+
+.indicatorRotation0 {
+    transform: rotate(0deg);
+}
+
+.indicatorRotation1 {
+    transform: rotate(45deg);
+}
+
+.indicatorRotation2 {
+    transform: rotate(90deg);
+}
+
+.indicatorRotation3 {
+    transform: rotate(135deg);
+}
+
+.indicatorRotation4 {
+    transform: rotate(180deg);
+}
+
+.indicatorRotation5 {
+    transform: rotate(225deg);
+}
+
+.indicatorRotation6 {
+    transform: rotate(270deg);
+}
+
+.indicatorRotation7 {
+    transform: rotate(315deg);
+}
+
+.indicatorRotation8 {
+    transform: rotate(360deg);
+}
+
+.indicatorRotation9 {
+    transform: rotate(405deg);
+}
+
+.indicatorRotation10 {
+    transform: rotate(450deg);
+}
+
+.indicatorRotation11 {
+    transform: rotate(490deg);
+}
+
+.indicatorRotation12 {
+    transform: rotate(535deg);
+}
+
+.indicatorRotation13 {
+    transform: rotate(580deg);
+}
+
+.indicatorRotation14 {
+    transform: rotate(625deg);
+}

@@ -1,46 +1,46 @@
 $(document).ready(function() {
     const   $setter = $('.setter'),
-            $setterInput = $setter.find('#position'),
-            $setterMin = parseInt($setterInput.attr('min')),
-            $setterMax = parseInt($setterInput.attr('max')),
+            $setterPosition = $setter.find('#position'),
+            $setterMin = parseInt($setterPosition.attr('min')),
+            $setterMax = parseInt($setterPosition.attr('max')),
             $setterPlus = $setter.find('.setter-form-controls-plus'),
             $setterMinus = $setter.find('.setter-form-controls-minus'),
             $telegraph = $('.telegraph'),
             $regulator = $telegraph.find('.regulator'),
-            $indicator1 = $telegraph.find('.indicator1'),
-            $indicator2 = $telegraph.find('.indicator2');
+            $indicatorRight = $telegraph.find('.indicatorRight'),
+            $indicatorLeft = $telegraph.find('.indicatorLeft');
 
     // Set regulator and indicator position
     function removePositions(index, className) {
-        let pattern = /position.*/;
+        let pattern = /Rotation.*/;
         return (className.match(pattern) || []).join(' ');
     }
 
     function setPositions(positions, position) {
-        const   classReg = "positionReg",
-                classInd = "position";
-        let regPos,
-            ind1Pos,
-            ind2Pos;
+        const   classRegulator = "regulatorRotation",
+                classIndicator = "indicatorRotation";
+        let regulatorPosition,
+            indicatorRightPosition,
+            indicatorLeftPosition;
 
-        regPos = classReg + positions[position].reg;
-        ind1Pos = classInd + positions[position].ind1;
-        ind2Pos = classInd + positions[position].ind2;
+        regulatorPosition = classRegulator + positions[position].regulator;
+        indicatorRightPosition = classIndicator + positions[position].indicatorRight;
+        indicatorLeftPosition = classIndicator + positions[position].indicatorLeft;
 
         // Add classes on regulator and indicators
         $regulator.removeClass(removePositions)
-                  .addClass(regPos);
-        $indicator1.removeClass(removePositions)
-                   .addClass(ind1Pos);
-        $indicator2.removeClass(removePositions)
-                   .addClass(ind2Pos);
+                  .addClass(regulatorPosition);
+        $indicatorRight.removeClass(removePositions)
+                   .addClass(indicatorRightPosition);
+        $indicatorLeft.removeClass(removePositions)
+                   .addClass(indicatorLeftPosition);
     };
 
     // Get default position number
-    $setterInput.val($setterMin);
+    $setterPosition.val($setterMin);
 
     // Get list of positions
-    let jsonFile = "js/positions.json",
+    let jsonFile = "js/position.json",
         request = new XMLHttpRequest();
 
     request.open('GET', jsonFile);
@@ -56,39 +56,39 @@ $(document).ready(function() {
             setPositions(positions, $setterMin);
 
             $setterPlus.on("click", function() {
-                let val = parseInt($setterInput.val());
+                let val = parseInt($setterPosition.val());
 
                 if (val < $setterMax) {
                     val += 1;
-                    $setterInput.val(val);
+                    $setterPosition.val(val);
                     setPositions(positions, val);
                 }
             });
 
             $setterMinus.on("click", function() {
-                let val = parseInt($setterInput.val());
+                let val = parseInt($setterPosition.val());
 
                 if (val > $setterMin) {
                     val -= 1;
-                    $setterInput.val(val);
+                    $setterPosition.val(val);
                     setPositions(positions, val);
                 }
             });
 
-            $setterInput.on('change input', function() {
-                let val = parseInt($setterInput.val());
+            $setterPosition.on('change input', function() {
+                let val = parseInt($setterPosition.val());
 
                 if (val > $setterMin && val < $setterMax) {
                     setPositions(positions, val);
                 }
 
                 if (val < $setterMin) {
-                    $setterInput.val($setterMin);
+                    $setterPosition.val($setterMin);
                     setPositions(positions, $setterMin);
                 }
 
                 if (val > $setterMax) {
-                    $setterInput.val($setterMax);
+                    $setterPosition.val($setterMax);
                     setPositions(positions, $setterMax);
                 }
             });
