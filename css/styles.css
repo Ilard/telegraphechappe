@@ -11,7 +11,6 @@
 .main .main-wrapper {
     height: 100%;
     display: flex;
-    flex-direction: column;
 }
 
 .main .telegraph {
@@ -20,6 +19,7 @@
     justify-content: center;
     align-items: center;
     padding: 30px;
+    width: 70%;
     box-sizing: border-box;
 }
 
@@ -76,9 +76,11 @@
     bottom: 0;
 }
 
-
 .main .setter {
-    flex: 0 0 fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
 }
 
 .main .setter .setter-wrapper {
@@ -86,6 +88,8 @@
     flex-direction: column;
     align-items: center;
     padding: 30px 0;
+    height: auto;
+    border-left: 1px solid #D5D5D5;
 }
 
 .main .setter .setter-title {
@@ -95,7 +99,6 @@
 
 .main .setter .setter-form {
     margin-top: 20px;
-    height: 40px;
 }
 
 .main .setter .setter-form .setter-form-number {
@@ -155,4 +158,18 @@ input[type="number"] {
     text-align: center;
     font: 30px "open_sansextrabold";
     color: #454545;
+}
+
+.main .setter .setter-info {
+    padding: 30px 0;
+}
+
+.main .setter .setter-info p {
+    font: 18px "open_sansregular";
+    line-height: 1.3em;
+    color: #454545;
+}
+
+.main .setter .setter-info p .position-number {
+    font-family: "open_sansbold";
 }

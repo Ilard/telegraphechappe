@@ -5,6 +5,9 @@ $(document).ready(function() {
             $setterMax = parseInt($setterPosition.attr('max')),
             $setterPlus = $setter.find('.setter-form-controls-plus'),
             $setterMinus = $setter.find('.setter-form-controls-minus'),
+            $positionRegulator = $setter.find('.position-regulator'),
+            $positionIndicatorLeft = $setter.find('.position-indicatorLeft'),
+            $positionIndicatorRight = $setter.find('.position-indicatorRight'),
             $telegraph = $('.telegraph'),
             $regulator = $telegraph.find('.regulator'),
             $indicatorRight = $telegraph.find('.indicatorRight'),
@@ -24,8 +27,8 @@ $(document).ready(function() {
             indicatorLeftPosition;
 
         regulatorPosition = classRegulator + positions[position].regulator;
-        indicatorRightPosition = classIndicator + positions[position].indicatorRight;
         indicatorLeftPosition = classIndicator + positions[position].indicatorLeft;
+        indicatorRightPosition = classIndicator + positions[position].indicatorRight;
 
         // Add classes on regulator and indicators
         $regulator.removeClass(removePositions)
@@ -34,6 +37,10 @@ $(document).ready(function() {
                    .addClass(indicatorRightPosition);
         $indicatorLeft.removeClass(removePositions)
                    .addClass(indicatorLeftPosition);
+
+        $positionRegulator.text(positions[position].regulator);
+        $positionIndicatorLeft.text(positions[position].indicatorLeft);
+        $positionIndicatorRight.text(positions[position].indicatorRight);
     };
 
     // Get default position number
