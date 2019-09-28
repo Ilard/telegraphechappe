@@ -1,62 +1,62 @@
 {
     "1": {
         "regulator": "0",
-        "indicatorRight": "2",
-        "indicatorLeft": "6"
+        "indicatorLeft": "0",
+        "indicatorRight": "0"
     },
     "2": {
         "regulator": "0",
-        "indicatorRight": "2",
-        "indicatorLeft": "7"
+        "indicatorLeft": "1",
+        "indicatorRight": "0"
     },
     "3": {
         "regulator": "0",
-        "indicatorRight": "9",
-        "indicatorLeft": "6"
+        "indicatorLeft": "0",
+        "indicatorRight": "7"
     },
     "4": {
         "regulator": "0",
-        "indicatorRight": "9",
-        "indicatorLeft": "7"
+        "indicatorLeft": "1",
+        "indicatorRight": "7"
     },
     "5": {
-        "regulator": "0",
-        "indicatorRight": "2",
-        "indicatorLeft": "5"
+        "regulator": "1",
+        "indicatorLeft": "0",
+        "indicatorRight": "0"
     },
     "6": {
-        "regulator": "0",
-        "indicatorRight": "3",
-        "indicatorLeft": "2"
+        "regulator": "1",
+        "indicatorLeft": "1",
+        "indicatorRight": "0"
     },
     "7": {
-        "regulator": "0",
-        "indicatorRight": "4",
-        "indicatorLeft": "0"
+        "regulator": "1",
+        "indicatorLeft": "0",
+        "indicatorRight": "7"
     },
     "8": {
-        "regulator": "0",
-        "indicatorRight": "5",
-        "indicatorLeft": "0"
+        "regulator": "1",
+        "indicatorLeft": "1",
+        "indicatorRight": "7"
     },
     "9": {
-        "regulator": "0",
-        "indicatorRight": "6",
-        "indicatorLeft": "4"
+        "regulator": "2",
+        "indicatorLeft": "0",
+        "indicatorRight": "0"
     },
     "10": {
-        "regulator": "0",
-        "indicatorRight": "7",
-        "indicatorLeft": "3"
+        "regulator": "2",
+        "indicatorLeft": "1",
+        "indicatorRight": "0"
     },
     "11": {
-        "regulator": "0",
-        "indicatorRight": "8",
-        "indicatorLeft": "0"
+        "regulator": "2",
+        "indicatorLeft": "0",
+        "indicatorRight": "7"
     },
     "12": {
-        "regulator": "0",
-        "indicatorRight": "9",
-        "indicatorLeft": "0"
+        "regulator": "2",
+        "indicatorLeft": "1",
+        "indicatorRight": "7"
     }
 }

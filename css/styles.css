@@ -62,20 +62,20 @@
 
 .main .telegraph .telegraph-wrapper .regulator .indicator {
     bottom: 0;
-    height: 200px;
-    width: 30px;
+    width: 200px;
+    height: 30px;
     background-color: #2980b9;
-}
-
-.main .telegraph .telegraph-wrapper .regulator .indicatorRight {
-    bottom: 0;
-    transform-origin: bottom;
+    transform-origin: left;
 }
 
 .main .telegraph .telegraph-wrapper .regulator .indicatorLeft {
     top: 0;
-    transform-origin: top;
 }
+
+.main .telegraph .telegraph-wrapper .regulator .indicatorRight {
+    bottom: 0;
+}
+
 
 .main .setter {
     flex: 0 0 fit-content;
