@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    $.ajaxSetup({ cache: false });
+
     const   $setter = $('.setter'),
             $setterPosition = $setter.find('#position'),
             $setterMin = parseInt($setterPosition.attr('min')),
@@ -8,27 +10,28 @@ $(document).ready(function() {
             $positionRegulator = $setter.find('.position-regulator'),
             $positionIndicatorLeft = $setter.find('.position-indicatorLeft'),
             $positionIndicatorRight = $setter.find('.position-indicatorRight'),
+            $debug = $setter.find('.debug'),
             $telegraph = $('.telegraph'),
             $regulator = $telegraph.find('.regulator'),
             $indicatorRight = $telegraph.find('.indicatorRight'),
             $indicatorLeft = $telegraph.find('.indicatorLeft');
 
-    // Set regulator and indicator position
+    // Set regulator and indicators position
     function removePositions(index, className) {
         let pattern = /Rotation.*/;
         return (className.match(pattern) || []).join(' ');
-    }
+    };
 
-    function setPositions(positions, position) {
+    function setSignal(signals, signal) {
         const   classRegulator = "regulatorRotation",
                 classIndicator = "indicatorRotation";
         let regulatorPosition,
             indicatorRightPosition,
             indicatorLeftPosition;
 
-        regulatorPosition = classRegulator + positions[position].regulator;
-        indicatorLeftPosition = classIndicator + positions[position].indicatorLeft;
-        indicatorRightPosition = classIndicator + positions[position].indicatorRight;
+        regulatorPosition = classRegulator + signals[signal].regulator;
+        indicatorLeftPosition = classIndicator + signals[signal].indicatorLeft;
+        indicatorRightPosition = classIndicator + signals[signal].indicatorRight;
 
         // Add classes on regulator and indicators
         $regulator.removeClass(removePositions)
@@ -38,67 +41,78 @@ $(document).ready(function() {
         $indicatorLeft.removeClass(removePositions)
                    .addClass(indicatorLeftPosition);
 
-        $positionRegulator.text(positions[position].regulator);
-        $positionIndicatorLeft.text(positions[position].indicatorLeft);
-        $positionIndicatorRight.text(positions[position].indicatorRight);
+        $positionRegulator.text(signals[signal].regulator);
+        $positionIndicatorLeft.text(signals[signal].indicatorLeft);
+        $positionIndicatorRight.text(signals[signal].indicatorRight);
     };
 
     // Get default position number
     $setterPosition.val($setterMin);
 
     // Get list of positions
-    let jsonFile = "js/position.json",
-        request = new XMLHttpRequest();
+    $.getJSON("js/signals.json", {
+        format: "json"
+    }, function(signals){
+        setSignal(signals, $setterMin);
 
-    request.open('GET', jsonFile);
-    request.responseType = 'json';
-    request.send();
+        // Increase manually the position
+        $setterPlus.on("click", function() {
+            let val = parseInt($setterPosition.val());
 
-    request.onloadend = () => {
+            if (val < $setterMax) {
+                val += 1;
+                $setterPosition.val(val);
+                setSignal(signals, val);
+            }
+        });
 
-        if (request.readyState === 4 && request.status === 200) {
-            let positions = request.response;
+        // Decrease manually the position
+        $setterMinus.on("click", function() {
+            let val = parseInt($setterPosition.val());
 
-            // TO DO : SI une position existe OU si la position change
-            setPositions(positions, $setterMin);
+            if (val > $setterMin) {
+                val -= 1;
+                $setterPosition.val(val);
+                setSignal(signals, val);
+            }
+        });
 
-            $setterPlus.on("click", function() {
-                let val = parseInt($setterPosition.val());
+        $setterPosition.on('change input', function() {
+            let val = parseInt($setterPosition.val());
 
-                if (val < $setterMax) {
-                    val += 1;
-                    $setterPosition.val(val);
-                    setPositions(positions, val);
-                }
+            if (val > $setterMin && val < $setterMax) {
+                setSignal(signals, val);
+            }
+
+            if (val < $setterMin) {
+                $setterPosition.val($setterMin);
+                setSignal(signals, $setterMin);
+            }
+
+            if (val > $setterMax) {
+                $setterPosition.val($setterMax);
+                setSignal(signals, $setterMax);
+            }
+        });
+
+        // Get signal from server
+        function getSignal() {
+            $.getJSON("signal.json", {
+                format: "json"
+            }, function(signal){
+                setSignal(signals, signal.signal);
+                $setterPosition.val(signal.signal);
+            })
+            .fail(function(xhr){
+                $debug.text("Fichier du signal émis : " + xhr.status + " " + xhr.statusText);
             });
+        };
 
-            $setterMinus.on("click", function() {
-                let val = parseInt($setterPosition.val());
-
-                if (val > $setterMin) {
-                    val -= 1;
-                    $setterPosition.val(val);
-                    setPositions(positions, val);
-                }
-            });
-
-            $setterPosition.on('change input', function() {
-                let val = parseInt($setterPosition.val());
-
-                if (val > $setterMin && val < $setterMax) {
-                    setPositions(positions, val);
-                }
-
-                if (val < $setterMin) {
-                    $setterPosition.val($setterMin);
-                    setPositions(positions, $setterMin);
-                }
-
-                if (val > $setterMax) {
-                    $setterPosition.val($setterMax);
-                    setPositions(positions, $setterMax);
-                }
-            });
-        }
-    };
+        setInterval(function(){
+            getSignal();
+        }, 500);
+    })
+    .fail(function(xhr){
+        $debug.text("Tableau des signaux : " + xhr.status + " " + xhr.statusText);
+    });
 });
