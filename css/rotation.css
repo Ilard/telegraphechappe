@@ -1,12 +1,16 @@
 .regulatorRotation0 {
-    transform: rotate(-90deg);
+    transform: rotate(0);
 }
 
 .regulatorRotation1 {
-    transform: rotate(-135deg);
+    transform: rotate(-90deg);
 }
 
 .regulatorRotation2 {
+    transform: rotate(-135deg);
+}
+
+.regulatorRotation3 {
     transform: rotate(-45deg);
 }
 

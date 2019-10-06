@@ -96,21 +96,21 @@ $(document).ready(function() {
         });
 
         // Get signal from server
-        // function getSignal() {
-        //     $.getJSON("signal.json", {
-        //         format: "json"
-        //     }, function(signal){
-        //         setSignal(signals, signal.signal);
-        //         $setterPosition.val(signal.signal);
-        //     })
-        //     .fail(function(xhr){
-        //         $debug.text("Fichier du signal émis : " + xhr.status + " " + xhr.statusText);
-        //     });
-        // };
-        //
-        // setInterval(function(){
-        //     getSignal();
-        // }, 500);
+        function getSignal() {
+            $.getJSON("signal.json", {
+                format: "json"
+            }, function(signal){
+                setSignal(signals, signal.signal);
+                $setterPosition.val(signal.signal);
+            })
+            .fail(function(xhr){
+                $debug.text("Fichier du signal émis : " + xhr.status + " " + xhr.statusText);
+            });
+        };
+
+        setInterval(function(){
+            getSignal();
+        }, 500);
     })
     .fail(function(xhr){
         $debug.text("Tableau des signaux : " + xhr.status + " " + xhr.statusText);

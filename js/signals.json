@@ -1,61 +1,66 @@
 {
-    "1": {
+    "0": {
         "regulator": "0",
+        "indicatorLeft": "2",
+        "indicatorRight": "6"
+    },
+    "1": {
+        "regulator": "1",
         "indicatorLeft": "0",
         "indicatorRight": "0"
     },
     "2": {
-        "regulator": "0",
+        "regulator": "1",
         "indicatorLeft": "1",
         "indicatorRight": "0"
     },
     "3": {
-        "regulator": "0",
+        "regulator": "1",
         "indicatorLeft": "0",
         "indicatorRight": "7"
     },
     "4": {
-        "regulator": "0",
+        "regulator": "1",
         "indicatorLeft": "1",
         "indicatorRight": "7"
     },
     "5": {
-        "regulator": "1",
+        "regulator": "2",
         "indicatorLeft": "0",
         "indicatorRight": "0"
     },
     "6": {
-        "regulator": "1",
+        "regulator": "2",
         "indicatorLeft": "1",
         "indicatorRight": "0"
     },
     "7": {
-        "regulator": "1",
+        "regulator": "2",
         "indicatorLeft": "0",
         "indicatorRight": "7"
     },
     "8": {
-        "regulator": "1",
+        "regulator": "2",
         "indicatorLeft": "1",
         "indicatorRight": "7"
     },
     "9": {
-        "regulator": "2",
+        "regulator": "3",
         "indicatorLeft": "0",
         "indicatorRight": "0"
     },
     "10": {
-        "regulator": "2",
+        "regulator": "3",
         "indicatorLeft": "1",
         "indicatorRight": "0"
     },
     "11": {
-        "regulator": "2",
+        "regulator": "3",
         "indicatorLeft": "0",
         "indicatorRight": "7"
     },
     "12": {
-        "regulator": "2",
+        "regulator": "3",
         "indicatorLeft": "1",
         "indicatorRight": "7"
     }
